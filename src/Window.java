@@ -14,10 +14,12 @@ public class Window extends JFrame {
     JButton reboot = new JButton("reboot");
     private final Background bg;
 
+    private String prog = "ftcontent\\programs\\";
+
     public Window(Background bg){
         this.bg = bg;
-        this.setName("FastBotPE");
         this.setBounds(350, 100, 401, 600);
+        this.setTitle("FastBotPE");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
         this.setAlwaysOnTop(Main.AlwaysOT);
@@ -25,7 +27,7 @@ public class Window extends JFrame {
         this.setLayout(null);
     }
     public void setUp(){
-        ImageIcon img = new ImageIcon("files\\info\\FastIcon.png");
+        ImageIcon img = new ImageIcon("ftcontent\\icons\\FastIcon.png");
         this.setIconImage(img.getImage());
 
     }
@@ -61,8 +63,8 @@ public class Window extends JFrame {
 
         //JB.setIcon(new ImageIcon("PNG.png"));
 
-        open.setIcon(new ImageIcon("files\\program\\open.png"));
-        back1.setIcon(new ImageIcon("files\\program\\back1.png"));
+        open.setIcon(new ImageIcon("ftcontent\\system\\open.png"));
+        back1.setIcon(new ImageIcon("ftcontent\\system\\back1.png"));
         setActionButtons();
     }
     public void setActionButtons(){
@@ -111,7 +113,7 @@ public class Window extends JFrame {
 
                 if(desktop.isSupported(Desktop.Action.OPEN)) {
                     try {
-                        desktop.open(new File("files\\content\\totalcmd\\TOTALCMD.EXE"));
+                        desktop.open(new File(prog+"totalcmd\\TOTALCMD.EXE"));
                     } catch (IOException ignored) {
                     }
 
@@ -128,7 +130,7 @@ public class Window extends JFrame {
 
                 if(desktop.isSupported(Desktop.Action.OPEN)) {
                     try {
-                        desktop.open(new File("files\\content\\kvtr.exe"));
+                        desktop.open(new File(prog+"kvtr.exe"));
                     } catch (IOException ignored) {
                     }
 
@@ -145,7 +147,7 @@ public class Window extends JFrame {
 
                 if(desktop.isSupported(Desktop.Action.OPEN)) {
                     try {
-                        desktop.open(new File("files\\content\\shutdown.bat"));
+                        desktop.open(new File(prog+"shutdown.bat"));
                     } catch (IOException ignored) {
                     }
 
@@ -162,7 +164,7 @@ public class Window extends JFrame {
 
                 if(desktop.isSupported(Desktop.Action.OPEN)) {
                     try {
-                        desktop.open(new File("files\\content\\restart.bat"));
+                        desktop.open(new File(prog+"restart.bat"));
                     } catch (IOException ignored) {
                     }
 
